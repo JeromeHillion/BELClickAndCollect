@@ -1,0 +1,54 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light p-5 ">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Recherche</h1>
+
+        </div>
+        <div class=" container p-5">
+            <div class="card-header">
+                <h4 class="text-secondary">Rechercher un livre</h4>
+                <div class="card p-5">
+                    <div class="form-floating mb-3">
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col">
+                                {{ form_row(form.name) }}
+                            </div>
+                            <div class="col">
+                                {{ form_row(form.search) }}
+                            </div>
+
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <table id="tableData"  class="d-none table table-striped">
+                    <thead class="bg-white">
+                    <tr>
+                        <th>titre</th>
+                        <th>auteur</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <button id="loader" class="btn btn-info visually-hidden" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+        </div>
+    </main>
+
+
+
+{% endblock body %}
+    {% block javascripts %}
+        <script src="{{ asset('js/reqListBooksApi.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
