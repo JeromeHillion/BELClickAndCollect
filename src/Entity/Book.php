@@ -46,6 +46,11 @@ class Book
      */
     private $cover;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $summary;
+
     public function __construct()
     {
         $this->author_id = new ArrayCollection();
@@ -149,6 +154,18 @@ class Book
     public function setCover(string $cover): self
     {
         $this->cover = $cover;
+
+        return $this;
+    }
+
+    public function getSummary(): ?string
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(string $summary): self
+    {
+        $this->summary = $summary;
 
         return $this;
     }

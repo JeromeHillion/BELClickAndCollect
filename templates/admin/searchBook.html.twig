@@ -6,13 +6,13 @@
 
         </div>
         <div class=" container p-5">
-            <div class="card-header">
-                <h4 class="text-secondary">Rechercher un livre</h4>
+            <div class="card bg-secondary" id="cardSearch">
+                <h4 class="text-light fs-5 text p-2">Rechercher un livre</h4>
                 <div class="card p-5">
                     <div class="form-floating mb-3">
                         {{ form_start(form) }}
                         <div class="row">
-                            <div class="col">
+                            <div class="col input-group input-group-sm mb-3">
                                 {{ form_row(form.name) }}
                             </div>
                             <div class="col">
@@ -26,11 +26,14 @@
 
             </div>
             <div>
+                <div id="resultSearch"></div>
                 <table id="tableData"  class="d-none table table-striped">
                     <thead class="bg-white">
                     <tr>
                         <th>titre</th>
                         <th>auteur</th>
+                        <th>Catégory</th>
+                        <th>Date de parution</th>
                         <th>Action</th>
                     </tr>
                     </thead>

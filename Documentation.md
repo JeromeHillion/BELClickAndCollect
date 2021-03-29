@@ -22,7 +22,7 @@ sous peine de refus.
 L'utilisateur pourra à tout moment consulté dans son espace personnel toutes les informations relatives à ses emprunts.
 
 Le rôle de la bibliothécaire sera de remplir la base de données avec les différents ouvrages mise à disposition du public, pour cela j'ai mis en place
-l'API google Books pour la gestion des livres. Elle pourra également metre à jours les informations de l'abonné :
+l'API google Books pour la gestion des livres. La bibliothécaire pourra également metre à jours les informations de l'abonné :
 
         - Contacter l'abboné
         - Prolonger les prêts

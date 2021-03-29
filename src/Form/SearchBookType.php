@@ -15,13 +15,13 @@ class SearchBookType extends AbstractType
         $builder
             ->add('name', textType::class, [
                 'attr'=> [
-                    'class'=> 'form-control',
-
+                    'class'=> 'form-control fs-6',
+                    'aria-describedby'=>'inputGroup-sizing-sm'
                 ]
             ])
             ->add('search', submitType::class,[
                 'attr' => [
-                    'class'=> 'btn btn-info text-light float-end mt-3'
+                    'class'=> 'btn btn-info text-light float-end mt-3 btn-sm'
                 ]
             ])
         ;
