@@ -4,9 +4,10 @@ namespace App\Entity;
 
 use App\Repository\BookRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ApiResource()
@@ -26,15 +27,7 @@ class Book
      */
     private $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Author::class, mappedBy="book")
-     */
-    private $author_id;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Category::class, mappedBy="book")
-     */
-    private $category_id;
 
     /**
      * @ORM\Column(type="date")
@@ -51,10 +44,20 @@ class Book
      */
     private $summary;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Author::class, inversedBy="books")
+     */
+    private $authors;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="books")
+     */
+    private $categories;
+
     public function __construct()
     {
-        $this->author_id = new ArrayCollection();
-        $this->category_id = new ArrayCollection();
+        $this->authors = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -74,65 +77,6 @@ class Book
         return $this;
     }
 
-    /**
-     * @return Collection|Author[]
-     */
-    public function getAuthorId(): Collection
-    {
-        return $this->author_id;
-    }
-
-    public function addAuthorId(Author $authorId): self
-    {
-        if (!$this->author_id->contains($authorId)) {
-            $this->author_id[] = $authorId;
-            $authorId->setBook($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAuthorId(Author $authorId): self
-    {
-        if ($this->author_id->removeElement($authorId)) {
-            // set the owning side to null (unless already changed)
-            if ($authorId->getBook() === $this) {
-                $authorId->setBook(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Category[]
-     */
-    public function getCategoryId(): Collection
-    {
-        return $this->category_id;
-    }
-
-    public function addCategoryId(Category $categoryId): self
-    {
-        if (!$this->category_id->contains($categoryId)) {
-            $this->category_id[] = $categoryId;
-            $categoryId->setBook($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategoryId(Category $categoryId): self
-    {
-        if ($this->category_id->removeElement($categoryId)) {
-            // set the owning side to null (unless already changed)
-            if ($categoryId->getBook() === $this) {
-                $categoryId->setBook(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getPublication(): ?\DateTimeInterface
     {
@@ -166,6 +110,54 @@ class Book
     public function setSummary(string $summary): self
     {
         $this->summary = $summary;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Author[]
+     */
+    public function getAuthors(): Collection
+    {
+        return $this->authors;
+    }
+
+    public function addAuthor(Author $author): self
+    {
+        if (!$this->authors->contains($author)) {
+            $this->authors[] = $author;
+        }
+
+        return $this;
+    }
+
+    public function removeAuthor(Author $author): self
+    {
+        $this->authors->removeElement($author);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        $this->categories->removeElement($category);
 
         return $this;
     }

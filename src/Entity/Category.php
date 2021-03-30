@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,10 +25,15 @@ class Category
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Book::class, inversedBy="category_id")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity=Book::class, mappedBy="categories")
      */
-    private $book;
+    private $books;
+
+    public function __construct()
+    {
+        $this->books = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -45,15 +52,32 @@ class Category
         return $this;
     }
 
-    public function getBook(): ?Book
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
     {
-        return $this->book;
+        return $this->books;
     }
 
-    public function setBook(?Book $book): self
+    public function addBook(Book $book): self
     {
-        $this->book = $book;
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->addCategory($this);
+        }
 
         return $this;
     }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            $book->removeCategory($this);
+        }
+
+        return $this;
+    }
+
+
 }

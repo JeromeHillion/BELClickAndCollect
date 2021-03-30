@@ -29,22 +29,15 @@ function fillTable(books) {
     }
 
 
-
 }
 
-function insertBefore() {
-    const searchMessage = document.createElement('h4');
-    let resultSearch = document.getElementById('resultSearch');
-    searchMessage.innerHTML = '<h4>Résultat de la recherche : </h4>'
-    resultSearch.append(searchMessage);
-}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let btnSearch = document.getElementById('search_book_search');
     const loader = document.getElementById('loader');
     btnSearch.addEventListener("click", function (event) {
         event.preventDefault();
-        insertBefore();
         loader.classList.remove('visually-hidden');
         getRequest().then(response => {
             fillTable(response);
