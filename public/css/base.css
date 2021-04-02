@@ -1,0 +1,56 @@
+body {
+    font-size: 16px;
+    background-color: #FAFAFA;
+}
+
+header {
+    background-color: #051622;
+    max-width: 100%;
+
+}
+
+header .row {
+    color: #1ba098;
+    display: flex;
+    justify-content: center;
+}
+
+.row div {
+    margin: 0 auto;
+
+}
+
+.row h4 {
+    font-family: 'Dela Gothic One', cursive;
+    line-height: 1rem;
+    letter-spacing: 0.5rem;
+    display: flex;
+    border-bottom: solid 0.1rem #1ba098;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+
+}
+
+.row img {
+    color: #deb992;
+    margin: 0 auto;
+    width: 3rem;
+    display: flex;
+
+
+}
+
+.navSecondary{
+    text-transform: uppercase;
+    background-color: #deb992;
+    display: flex;
+    justify-content: center;
+}
+.navSecondary a{
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    letter-spacing: 0.1rem;
+    font-family: 'Roboto', sans-serif;
+}

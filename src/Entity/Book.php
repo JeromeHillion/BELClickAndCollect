@@ -7,6 +7,9 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\Date;
+
 
 
 /**
@@ -30,14 +33,16 @@ class Book
 
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $publication;
-
-    /**
      * @ORM\Column(type="string", length=50)
      */
+    private  $publication;
+
+    /**
+     *    @ORM\Column(type="string", length=255)
+     */
     private $cover;
+
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -77,30 +82,45 @@ class Book
         return $this;
     }
 
-
-    public function getPublication(): ?\DateTimeInterface
+    /**
+     * @return mixed
+     */
+    public function getPublication()
     {
         return $this->publication;
     }
 
-    public function setPublication(\DateTimeInterface $publication): self
+    /**
+     * @param mixed $publication
+     */
+    public function setPublication($publication): void
     {
         $this->publication = $publication;
-
-        return $this;
     }
 
-    public function getCover(): ?string
+    /**
+     * @return mixed
+     */
+    public function getCover()
     {
         return $this->cover;
     }
 
-    public function setCover(string $cover): self
+    /**
+     * @param mixed $cover
+     * @return Book
+     */
+    public function setCover($cover)
     {
         $this->cover = $cover;
-
         return $this;
     }
+
+
+
+
+
+
 
     public function getSummary(): ?string
     {

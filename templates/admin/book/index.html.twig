@@ -21,10 +21,10 @@
                 <td>{{ book.id }}</td>
                 <td>{{ book.name }}</td>
                 <td>{{ book.publication ? book.publication|date('Y-m-d') : '' }}</td>
-                <td>{{ book.cover }}</td>
+                <td><img src="{{ book.cover }}" alt=""></td>
                 <td>
-                    <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
-                    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                    <a href="{#{{ path('book_show', {'id': book.id}) }}#}">show</a>
+                    <a href="{#{{ path('book_edit', {'id': book.id}) }}#}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('book_new') }}">Create new</a>
+    <a href="{#{{ path('book_new') }}#}">Create new</a>
 {% endblock %}

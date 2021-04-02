@@ -19,7 +19,6 @@ function fillTable(books) {
             "<td class='col-2'>" + line.volumeInfo.categories + "</td>"
             + "</td>" + "<td class='col-2'>" + line.volumeInfo.publishedDate + "</td>" +
             "<td class='col-2'><a href='/admin/getBook/" + line.id + "'" + "" + " class='btn btn-secondary me-2 btn-sm'>Voir</a><a href='#' class='btn btn-info text-light btn-sm'>Ajouter</a></td></tr>"
-
     }
 
     document.getElementById('tbody').innerHTML = html;
@@ -46,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Livre non trouvé !')
             loader.classList.add('visually-hidden');
         })
+
 
     })
 });

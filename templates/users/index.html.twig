@@ -1,26 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
-
+{% block title %}Bienvenue sur l'accceuil de la BEL{% endblock %}
+ {% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/users/index.css') }}">
+ {% endblock %}
 {% block body %}
-    <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    </style>
-<header>
-    <nav>
-        <ul>
-            <a href="{{ '/admin/searchBook' }}">Chercher un livre sur google Books</a>
-        </ul>
-    </nav>
-</header>
-    <div class="example-wrapper">
-        <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="headband">
+        <img src="{{ asset('images/pexels-mentatdgt-1319854.jpg') }}" width="1841" height="350"
+             alt="pexels-mentatdgt-1319854.jpg">
+    </div>
 
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code><a href="{{ '/home/live-45/sites/demoSf/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-            <li>Your template at <code><a href="{{ '/home/live-45/sites/demoSf/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-        </ul>
+    <div class="container">
+        <div class="presantationSection">
+            <article>
+                <h1>Présentation</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum deserunt dolore est,
+                    ex explicabo ipsam labore magnam maiores molestias officia porro quidem sed sint soluta unde vitae.
+                    At, sapiente?
+                    Ab debitis doloremque earum enim eveniet itaque nostrum possimus, reprehenderit
+                    totam? Ab alias animi architecto assumenda consequuntur cumque deleniti dignissimos error, mollitia
+                    placeat,
+                    quibusdam recusandae repudiandae, sapiente sequi soluta voluptatum.
+                    Animi
+                    aut consequatur debitis dolore explicabo itaque laboriosam laudantium nesciunt quisquam? Ad
+                    dignissimos distinctio
+                    dolores excepturi facere id maiores nesciunt, placeat possimus quae qui, sequi soluta sunt tempora
+                    temporibus ullam.
+                    Accusamus accusantium aliquam aliquid atque aut autem consequuntur delectus error est ex fugiat
+                    harum id
+                    incidunt labore</p>
+                <img src="{{ asset('images/pexels-berk-ozdemir-3779187.jpg') }}" alt="">
+                <p>
+                 neque optio quos, repellat repellendus saepe similique soluta tempore tenetur
+                    voluptas! A, repellendus
+                    .Debitis expedita, facere incidunt inventore maiores minus non odit quam quo rerum sunt, suscipit
+                    totam.
+                    Ab aliquid consectetur error magnam necessitatibus officiis perferendis quam veritatis. Blanditiis
+                    eveniet iure pariatur
+                    quo.Atque autem commodi culpa delectus distinctio dolorem enim est eveniet expedita facere inventore
+                    laborum
+                    molestiae molestias nisi nobis pariatur perspiciatis placeat quibusdam recusandae sapiente sed vel,
+                    veritatis voluptatum.
+                    Doloribus, sit.Deserunt doloribus exercitationem mollitia natus optio reiciendis reprehenderit
+                    similique soluta
+                    suscipit temporibus! Asperiores debitis iusto minus molestias perferendis qui quia ratione rem!
+                    Aliquam necessitatibus nihil
+                    pariatur. Architecto esse non porro?A accusamus commodi consectetur culpa dolorum ea eaque ex,
+                    facere illum
+                    minus modi mollitia neque nostrum placeat, recusandae tempore veniam vitae. Debitis impedit labore
+                    necessitatibus nesciunt
+                    obcaecati omnis qui recusandae!A alias aspernatur atque, doloribus dolorum earum enim eos est
+                    eveniet
+                    exercitationem fugit illo incidunt inventore ipsum libero obcaecati odio omnis praesentium qui,
+                    quisquam, recusandae
+                    repellendus sequi tempore velit veniam.Aperiam architecto asperiores consectetur cum doloremque
+                    dolores
+                    ea earum enim fugit id ipsam ipsum, labore maiores minus,
+                    molestiae necessitatibus nisi non obcaecati odio, officia optio quas quis rerum soluta tempore.
+                </p>
+            </article>
+            <section>
+                <h3>Ouverture</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi consequatur dicta
+                    dignissimos dolor
+                    doloremque illo impedit ipsa iure, laudantium numquam quas quo repudiandae, sequi sit soluta tenetur
+                    unde vel?</p>
+            </section>
+        </div>
     </div>
 {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('js/users/index.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}
