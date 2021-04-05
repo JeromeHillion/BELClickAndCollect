@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/users/books.css') }}">
+        {{ parent () }}
+    {% endblock %}
+{% block body %}
+    <h2><img src="{{ asset('images/icones/icons8-books-32.png') }}" alt="icons8-books-32.png">Nos livres</h2>
+    <div class="books">
+        {% for book in books %}
+            <div class="book">
+                <div class="cover">
+                <img src="{{ book.cover }}" alt="">
+                </div>
+                <div class="link">
+            <a id="btnModal" class="btn viewBook" {#href=" /users/books/book/{{book.id}}"#}><img src="{{ asset('images/icones/icons8-info-20.png') }}" alt="">Voir</a>
+            <a  class="btn addKart" href="#"> <img src="{{ asset('images/icones/icons8-shopping-cart-20.png') }}" alt="">Ajouter</a>
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+    <div class="modal">
+
+</div>
+{% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('js/users/books.js') }}" crossorigin="anonymous"></script>
+    {% endblock %}

@@ -17,7 +17,7 @@
     {% block javascripts %}
         {# {{ encore_entry_script_tags('app') }} #}
     {% endblock %}
-</head>
+    <div class="container">
 <body>
 <header>
     <div class="row">
@@ -29,8 +29,8 @@
     </div>
 </header>
 <div class="navSecondary">
-    <a href="#">Accueil</a>
-    <a href="#">les livres</a>
+    <a href="{{ asset('/') }}">Accueil</a>
+    <a href="{{ asset('/users/books') }}">les livres</a>
     <a href="#">rechercher</a>
     <a href="#">charte d'utilisation</a>
     <a href="#">ma bibliothèque</a>
@@ -38,5 +38,7 @@
 </div>
 
 {% block body %}{% endblock %}
+</div>
+</head>
 </body>
 </html>

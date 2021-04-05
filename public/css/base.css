@@ -1,6 +1,15 @@
 body {
     font-size: 16px;
-    background-color: #FAFAFA;
+    background-color: #051622;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 8;
+
 }
 
 header {
@@ -41,13 +50,14 @@ header .row {
 
 }
 
-.navSecondary{
+.navSecondary {
     text-transform: uppercase;
-    background-color: #deb992;
+    background: linear-gradient(#deb992, #615140);
     display: flex;
     justify-content: center;
 }
-.navSecondary a{
+
+.navSecondary a {
     color: #fff;
     text-decoration: none;
     padding: 1rem;

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="book">
+        <img src="{{ book.cover }}" alt="">
+        <p>{{ book.name }}</p>
+        {#<p>{{ book.author.name }}</p>
+        <p>{{ book.category.name }}</p>#}
+        <p>{{ book.publication ? book.publication|date('Y-m-d') : '' }}</p>
+        <p>{{ book.summary }}</p>
+    </div>
+
+{% endblock %}

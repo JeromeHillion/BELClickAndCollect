@@ -1,0 +1,87 @@
+.books{
+    display: flex;
+    width: 78rem;
+    margin: 0 auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #FAFAFA;
+    max-width: 100%;
+    padding: 2rem 0.05rem 2rem 0.05rem;
+
+}
+.cover{
+   display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.book{
+    padding: 2rem;
+    background-color: #fff;
+    border: solid 0.2rem #1ba098;
+    margin-top: 1rem;
+    box-shadow: -10px 5px 5px #deb992;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+}
+
+.book:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn{
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-decoration: none;
+    display: block;
+    margin-left: 1rem;
+    box-shadow: -10px 5px 5px #ccc;
+}
+
+.viewBook{
+    background-color: #1ba098;
+    border-bottom: solid 0.1rem #1ba098;
+}
+.viewBook:active{
+    background-color: #1ba098;
+    border-bottom: solid 0.1rem #1ba098;
+}
+.viewBook img, .addKart img{
+    vertical-align: bottom;
+    margin-right: 0.3rem;
+}
+
+.addKart{
+    background-color: #deb992;
+    border-bottom: solid 0.1rem #deb992;
+}
+.link{
+    display: flex;
+    justify-content: space-around;
+}
+h2{
+    color: #fff;
+    background: linear-gradient(#1BA098, #10615C);
+    width: 76.05rem;
+    margin: 2rem  0 0 18.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+h2 img {
+    margin-right: 1rem;
+}
+
+.modal{
+    width: 90%;
+    border: solid 1px #ccc;
+    display: none;
+    background-color: #fff;
+margin: 0 auto;
+}
+a {
+    cursor: pointer;
+}
